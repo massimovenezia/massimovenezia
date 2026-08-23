@@ -11,9 +11,9 @@ window.SITE_CONFIG = {
 
     // Foto grande y horizontal arriba del nombre.
     // - Dejalo en null para mostrar un placeholder con tu monograma.
-    // - Cuando tengas la foto, ponela en public/assets/photo.jpg (horizontal,
-    //   ideal 4:3) y cambiá esta línea a: photo: "/assets/photo.jpg"
-    photo: null,
+    // - Para cambiarla: reemplazá public/assets/photo.jpg por otra imagen
+    //   horizontal (ideal 3:2) con el mismo nombre de archivo.
+    photo: "/assets/photo.jpg",
   },
 
   // Links que se muestran, como iconos, en orden. Agregá, borrá o reordená.
