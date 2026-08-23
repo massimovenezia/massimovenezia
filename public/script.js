@@ -29,12 +29,14 @@
   }
 
   // link icons
+  // Sin target="_blank": en mobile, el tap tiene que ser una navegación de
+  // primer nivel para que el SO pueda abrir la app vía Universal/App Link.
   const list = $(".links");
   cfg.links.forEach((link) => {
     const li = document.createElement("li");
     const path = icons[link.icon] || "";
     li.innerHTML = `
-      <a href="${link.url}" data-icon="${link.icon}" target="_blank" rel="noopener noreferrer" aria-label="${link.label}">
+      <a href="${link.url}" data-icon="${link.icon}" aria-label="${link.label}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="${path}"/></svg>
       </a>`;
     list.appendChild(li);
@@ -42,6 +44,12 @@
 
   if (window.DEEPLINKS) {
     window.DEEPLINKS.wireDeepLinks(list);
-    window.DEEPLINKS.showInAppBannerIfNeeded();
+    // En desktop no hay app que abrir: mejor dejar que abra en pestaña nueva.
+    if (!window.DEEPLINKS.isMobile) {
+      list.querySelectorAll("a").forEach((a) => {
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      });
+    }
   }
 })();

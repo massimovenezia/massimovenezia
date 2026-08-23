@@ -20,6 +20,19 @@ Para poner tu foto (grande, horizontal, arriba del nombre):
 
 Variables en la parte de arriba de `public/styles.css` (`:root { ... }`).
 
+## Deep links a las apps (mobile)
+
+`public/deeplinks.js` intenta abrir la app nativa al tocar un ícono desde el
+celular, solo para las redes que tienen un esquema de URL propio confiable
+(X, YouTube). Para Instagram y TikTok no hay un esquema estable: se dejan
+como links normales (sin `target="_blank"`) para que el tap sea una
+navegación real y el sistema operativo pueda resolver su propio Universal
+Link / App Link si la app está instalada.
+
+Si en algún momento Instagram vuelve a soportar bien su esquema propio,
+se puede sumar de nuevo el caso `"instagram"` en `buildAppUrl()` (queda
+comentado ahí mismo el motivo por el que se sacó).
+
 ## Descripción según idioma / país
 
 `src/worker.js` reescribe el `<meta name="description">` (y `og:description`)
