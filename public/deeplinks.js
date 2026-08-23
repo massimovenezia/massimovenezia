@@ -57,5 +57,18 @@
     });
   }
 
-  window.DEEPLINKS = { isMobile, wireDeepLinks };
+  // El HTML ya viene con los links armados (renderizados por el Worker),
+  // así que esto corre directo: no hace falta esperar a que JS construya
+  // nada primero.
+  const list = document.querySelector(".links");
+  if (list) {
+    wireDeepLinks(list);
+    // En desktop no hay app que abrir: mejor dejar que abra en pestaña nueva.
+    if (!isMobile) {
+      list.querySelectorAll("a").forEach((a) => {
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      });
+    }
+  }
 })();
