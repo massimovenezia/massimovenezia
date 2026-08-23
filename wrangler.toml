@@ -1,0 +1,14 @@
+name = "massimovenezia"
+compatibility_date = "2025-01-01"
+account_id = "5a0ced89558f2c36a9fab00623f49621"
+
+[assets]
+directory = "./public"
+
+[[routes]]
+pattern = "massimovenezia.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.massimovenezia.com"
+custom_domain = true
