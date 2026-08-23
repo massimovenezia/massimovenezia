@@ -9,11 +9,11 @@ window.SITE_CONFIG = {
     // Nombre. Se muestra como una sola línea.
     name: "Massimo Venezia",
 
-    // Foto de perfil.
-    // - Dejalo en null para mostrar el monograma "MV" como placeholder.
-    // - Cuando tengas la foto, ponela en public/assets/avatar.jpg (o .png/.webp)
-    //   y cambiá esta línea a: avatar: "/assets/avatar.jpg"
-    avatar: null,
+    // Foto grande y horizontal arriba del nombre.
+    // - Dejalo en null para mostrar un placeholder con tu monograma.
+    // - Cuando tengas la foto, ponela en public/assets/photo.jpg (horizontal,
+    //   ideal 4:3) y cambiá esta línea a: photo: "/assets/photo.jpg"
+    photo: null,
   },
 
   // Links que se muestran, como iconos, en orden. Agregá, borrá o reordená.

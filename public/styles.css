@@ -6,12 +6,10 @@
   --bg: #f6f4f0;
   --ink: #151310;
   --ink-soft: #8a8478;
-  --button: #151310;
-  --button-ink: #f6f4f0;
 
   --font: "Instrument Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
 
-  --container: 26rem;
+  --container: 34rem;
 }
 
 * {
@@ -37,21 +35,19 @@ main {
   max-width: var(--container);
   margin: 0 auto;
   min-height: 100svh;
-  padding: 1.5rem;
+  padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
-/* avatar ------------------------------------------------------------- */
-.avatar {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  border: 1px solid rgba(21, 19, 16, 0.14);
+/* photo ------------------------------------------------------------- */
+.photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   background: var(--bg);
   display: flex;
   align-items: center;
@@ -59,17 +55,21 @@ main {
   overflow: hidden;
 }
 
-.avatar img {
+.photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.avatar .initials {
+.photo.placeholder {
+  background: #ece7dd;
+}
+
+.photo .initials {
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: clamp(2.5rem, 12vw, 4rem);
   letter-spacing: 0.01em;
-  color: var(--ink);
+  color: rgba(21, 19, 16, 0.22);
 }
 
 /* name ------------------------------------------------------------------ */
@@ -90,30 +90,28 @@ h1.name {
 }
 
 .links a {
-  width: 3.1rem;
-  height: 3.1rem;
-  border-radius: 0.85rem;
-  background: var(--button);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.18s ease, opacity 0.18s ease;
+  padding: 0.4rem;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .links a svg {
-  width: 1.4rem;
-  height: 1.4rem;
-  fill: var(--button-ink);
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: var(--ink);
 }
 
 .links a:hover,
 .links a:focus-visible {
-  transform: translateY(-3px);
-  opacity: 0.85;
+  opacity: 0.55;
+  transform: translateY(-2px);
 }
 
 .links a:active {
-  transform: translateY(-1px) scale(0.96);
+  opacity: 0.4;
+  transform: translateY(0);
 }
 
 /* footer ------------------------------------------------------------------- */

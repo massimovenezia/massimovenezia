@@ -12,9 +12,9 @@ Los links se muestran como iconos (sin texto), tomados de `public/icons.js`.
 Para agregar una red que no esté ahí, sumá su path SVG en `icons.js` y
 después referencialo desde `content.js`.
 
-Para poner tu foto de perfil:
-1. Copiá la imagen a `public/assets/avatar.jpg`
-2. En `public/content.js`, cambiá `avatar: null` por `avatar: "/assets/avatar.jpg"`
+Para poner tu foto (grande, horizontal, arriba del nombre):
+1. Copiá la imagen a `public/assets/photo.jpg`
+2. En `public/content.js`, cambiá `photo: null` por `photo: "/assets/photo.jpg"`
 
 ## Cambiar colores / tipografía
 

@@ -7,14 +7,15 @@
   $("footer").textContent = cfg.footer;
   document.title = cfg.profile.name;
 
-  // avatar: real photo if provided, otherwise initials monogram
-  const avatarEl = $(".avatar");
-  if (cfg.profile.avatar) {
+  // photo: real photo if provided, otherwise a placeholder with initials
+  const photoEl = $(".photo");
+  if (cfg.profile.photo) {
     const img = document.createElement("img");
-    img.src = cfg.profile.avatar;
+    img.src = cfg.profile.photo;
     img.alt = cfg.profile.name;
-    avatarEl.appendChild(img);
+    photoEl.appendChild(img);
   } else {
+    photoEl.classList.add("placeholder");
     const initials = document.createElement("span");
     initials.className = "initials";
     initials.textContent = cfg.profile.name
@@ -24,7 +25,7 @@
       .join("")
       .slice(0, 2)
       .toUpperCase();
-    avatarEl.appendChild(initials);
+    photoEl.appendChild(initials);
   }
 
   // link icons
