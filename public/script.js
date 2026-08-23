@@ -34,9 +34,14 @@
     const li = document.createElement("li");
     const path = icons[link.icon] || "";
     li.innerHTML = `
-      <a href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${link.label}">
+      <a href="${link.url}" data-icon="${link.icon}" target="_blank" rel="noopener noreferrer" aria-label="${link.label}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="${path}"/></svg>
       </a>`;
     list.appendChild(li);
   });
+
+  if (window.DEEPLINKS) {
+    window.DEEPLINKS.wireDeepLinks(list);
+    window.DEEPLINKS.showInAppBannerIfNeeded();
+  }
 })();
