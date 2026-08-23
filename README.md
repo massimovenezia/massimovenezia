@@ -20,6 +20,18 @@ Para poner tu foto (grande, horizontal, arriba del nombre):
 
 Variables en la parte de arriba de `public/styles.css` (`:root { ... }`).
 
+## Descripción según idioma / país
+
+`src/worker.js` reescribe el `<meta name="description">` (y `og:description`)
+al español o inglés según el país del visitante (usando la geolocalización
+que ya resuelve Cloudflare en el edge, `request.cf.country`). Los textos
+están en el objeto `COPY` de ese archivo; la lista de países en español en
+`SPANISH_SPEAKING_COUNTRIES`.
+
+Esto cambia lo que ve una persona real al abrir el link. No cambia el
+snippet que indexa Google: los buscadores rastrean desde su propia
+ubicación fija, así que ahí siempre se ve un solo idioma.
+
 ## Imagen para compartir (OG image)
 
 `index.html` referencia `/assets/og-image.jpg` (1200x630) para la vista previa

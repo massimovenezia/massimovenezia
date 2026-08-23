@@ -1,9 +1,11 @@
 name = "massimovenezia"
+main = "src/worker.js"
 compatibility_date = "2025-01-01"
 account_id = "5a0ced89558f2c36a9fab00623f49621"
 
 [assets]
 directory = "./public"
+binding = "ASSETS"
 
 [[routes]]
 pattern = "massimovenezia.com"
