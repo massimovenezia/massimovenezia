@@ -6,15 +6,8 @@
  */
 window.SITE_CONFIG = {
   profile: {
-    // Nombre. Se muestra en dos líneas: firstName / lastName.
-    firstName: "Massimo",
-    lastName: "Venezia",
-
-    // Texto chico arriba del nombre (small caps). Podés poner tu @ o lo que quieras.
-    eyebrow: "@massimovenezia",
-
-    // Bajada / bio corta debajo del nombre.
-    tagline: "Todo lo que hago, en un solo lugar.",
+    // Nombre. Se muestra como una sola línea.
+    name: "Massimo Venezia",
 
     // Foto de perfil.
     // - Dejalo en null para mostrar el monograma "MV" como placeholder.
@@ -23,29 +16,15 @@ window.SITE_CONFIG = {
     avatar: null,
   },
 
-  // Links que se muestran, en orden. Agregá, borrá o reordená lo que quieras.
-  // "label" = nombre de la red. "handle" = lo que se ve grande. "url" = adónde va.
+  // Links que se muestran, como iconos, en orden. Agregá, borrá o reordená.
+  // "icon" tiene que ser una de las claves definidas en public/icons.js
+  // (instagram, x, tiktok, youtube). Si agregás una red que no está ahí,
+  // sumale el path SVG correspondiente en icons.js primero.
   links: [
-    {
-      label: "Instagram",
-      handle: "@massimoveneziaa",
-      url: "https://instagram.com/massimoveneziaa",
-    },
-    {
-      label: "X",
-      handle: "@massimovenezia",
-      url: "https://x.com/massimovenezia",
-    },
-    {
-      label: "TikTok",
-      handle: "@massimovenezia",
-      url: "https://tiktok.com/@massimovenezia",
-    },
-    {
-      label: "YouTube",
-      handle: "@massimo_venezia",
-      url: "https://www.youtube.com/@massimo_venezia",
-    },
+    { icon: "instagram", label: "Instagram", url: "https://instagram.com/massimoveneziaa" },
+    { icon: "tiktok", label: "TikTok", url: "https://tiktok.com/@massimovenezia" },
+    { icon: "youtube", label: "YouTube", url: "https://www.youtube.com/@massimo_venezia" },
+    { icon: "x", label: "X", url: "https://x.com/massimovenezia" },
   ],
 
   // Texto del pie de página. Podés dejarlo vacío: "".

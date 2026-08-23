@@ -5,8 +5,12 @@ desplegado como Cloudflare Worker (static assets).
 
 ## Editar contenido
 
-Todo el contenido (nombre, bio, links, foto) está en **`public/content.js`**.
+Todo el contenido (nombre, links, foto) está en **`public/content.js`**.
 Los comentarios ahí explican cada campo. No hace falta tocar HTML ni CSS.
+
+Los links se muestran como iconos (sin texto), tomados de `public/icons.js`.
+Para agregar una red que no esté ahí, sumá su path SVG en `icons.js` y
+después referencialo desde `content.js`.
 
 Para poner tu foto de perfil:
 1. Copiá la imagen a `public/assets/avatar.jpg`
