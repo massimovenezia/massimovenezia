@@ -54,7 +54,7 @@ function renderLinks() {
   return content.links
     .map((link) => {
       const path = icons[link.icon] || "";
-      return `<li><a href="${escapeHtml(link.url)}" data-icon="${escapeHtml(link.icon)}" aria-label="${escapeHtml(link.label)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${path}"/></svg></a></li>`;
+      return `<li><a href="${escapeHtml(link.url)}" data-icon="${escapeHtml(link.icon)}" aria-label="${escapeHtml(link.label)}"><svg viewBox="-0.6 -0.6 25.2 25.2" aria-hidden="true"><path d="${path}"/></svg></a></li>`;
     })
     .join("");
 }
